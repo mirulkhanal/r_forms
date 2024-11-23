@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+}
+
+.toolbar-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mode-toggle {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-toggle:hover {
+  background: #1d4ed8;
+}
+
+.main-content {
+  width: 80%;
+  margin-top: 50px;
+  padding: 20px;
+  background: #fff;
+}
+
+.dropzone {
+  height: calc(100vh - 90px);
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.component-container {
+  position: relative;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.component-container.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.delete-btn:hover {
+  background: #ddd;
+}
+
+.sidebar {
+  width: 20%;
+  background: #f8f8f8;
+  border-left: 1px solid #ddd;
+  margin-top: 50px;
+}
+
+.sidebar-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #fff;
+  border-bottom: 2px solid #2563eb;
+}
+
+.tab-btn:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+.sidebar-content {
+  padding: 16px;
+}
+
+.component-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: move;
+}
+
+.component-list-item:hover {
+  background: #f5f5f5;
+}
+
+.properties-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.property-group {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+.property-group-title {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.property-field {
+  margin-bottom: 8px;
+}
+
+.property-field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.property-field input[type='text'],
+.property-field input[type='number'],
+.property-field select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.property-field-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-component {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-component:focus {
+  outline: none;
+  border-color: #2563eb;
+}
