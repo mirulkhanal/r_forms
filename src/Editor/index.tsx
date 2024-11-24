@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from '../Sidebar';
 import Workspace from '../Workspace';
+import PropertiesPanel from '../Sidebar/PropertiesPanel';
 import { ComponentPropType } from '../_types';
 
 const predefinedComponents: ComponentPropType[] = [
@@ -24,17 +25,25 @@ const predefinedComponents: ComponentPropType[] = [
   },
 ];
 
-const Editor: React.FC = () => {
+const Editor = () => {
   const [workspaceComponents, setWorkspaceComponents] = useState<
     ComponentPropType[]
   >([]);
 
+  const handleComponentDrop = (component: ComponentPropType) => {
+    const newComponent = {
+      ...component,
+      id: `${component.type}-${Date.now()}`,
+    }; // Unique ID
+    setWorkspaceComponents((prev) => [...prev, newComponent]);
+  };
+
   return (
-    <div style={{ display: 'flex', width: '100vw', height: '100vh' }}>
+    <div style={{ display: 'flex', height: '100vh' }}>
       <Sidebar components={predefinedComponents} />
       <Workspace
         components={workspaceComponents}
-        setComponents={setWorkspaceComponents}
+        onComponentDrop={handleComponentDrop}
       />
     </div>
   );

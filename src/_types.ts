@@ -11,7 +11,5 @@ export interface ComponentPropType {
   id: string; // Unique identifier for the component
   name: string; // Display name for the component
   type: ComponentType; // Type of the component (e.g., button, input)
-  properties?: {
-    [key: string]: any; // A flexible structure to hold component-specific properties
-  };
+  properties?: Record<string, string>;
 }
